@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int Fibonacci(int n)
+int fibononacci(int n)
 {
 
     if(n==1 || n==0)
@@ -11,7 +11,7 @@ int Fibonacci(int n)
     }
     else if (n>1)
     {
-        return Fibonacci(n-1)+Fibonacci(n-2);
+        return fibononacci(n-1)+fibononacci(n-2);
     }
 }
 
@@ -19,7 +19,7 @@ int main()
 {
     int i;
     cin>> i;
-    cout << Fibonacci(i);
+    cout << fibononacci(i);
 
 return 0;
 }
