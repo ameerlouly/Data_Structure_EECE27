@@ -5,13 +5,11 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [
-        "betty"
-      ],
+      "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/test/Documents/EECE/CPP/Data_Structure_EECE27/Labs/LAB 3",
+      "program": "c:/Users/test/Documents/EECE/CPP/Data_Structure_EECE27/Labs/LAB 3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
