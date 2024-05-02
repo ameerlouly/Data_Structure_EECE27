@@ -5,7 +5,10 @@
 
 using namespace std;
 
-float avg (float, float);
+float avg (float a, float b)
+{
+  return (a + b)/2;
+}
 
 int main ()
 {
