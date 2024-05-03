@@ -27,7 +27,7 @@ void strcat(char s1[], char s2[])
     int i = 0;
     while(s2[i] != '\0')
     {
-        s1[len + i] = s2[i];
+        s1[len] = s2[i];
         i++;
     }
 }
@@ -45,8 +45,6 @@ int main()
 
     strcat(s1,s2);
 
-    for(int i = 0; i < 20; i++)
-        cout << s1[i];
     cout << endl;
     
     cout << s1;

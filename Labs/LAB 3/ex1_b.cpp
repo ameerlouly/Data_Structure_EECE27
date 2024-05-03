@@ -32,7 +32,7 @@ int main()
     k=st1.find(ss);
     cout<<k<<endl;
 
-    while(k > 0)
+    while(k >= 0)
     {
         st1[k]='s';
         k= st1.find(ss,k+1);
