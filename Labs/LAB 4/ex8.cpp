@@ -20,7 +20,7 @@ dist calc_dist(dist a, dist b)
     l3.cm = a.cm + b.cm;
     l3.m = a.m + b.m;
 
-    if (l3.cm >= 100)
+    while (l3.cm >= 100)
         {
             l3.m++;
             l3.cm -=100;
@@ -28,7 +28,7 @@ dist calc_dist(dist a, dist b)
 
     l3.km = a.km + b.km;
 
-    if (l3.m >= 1000)
+    while (l3.m >= 1000)
         {
             l3.km++;
             l3.m -= 1000;
