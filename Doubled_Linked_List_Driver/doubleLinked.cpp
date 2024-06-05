@@ -12,6 +12,14 @@ void doubleLinked::insert(const elemtype &e)    //Insert at the beginning of the
     assert(addnode);
 
     addnode->elem = e;
+
+    if(head == 0)
+    {
+        head = addnode;
+        head->prev = 0;
+        head->next = 0;
+    }
+    
     head->prev = addnode;
     addnode->next = head;
     addnode->prev = 0;
@@ -71,21 +79,23 @@ void doubleLinked::insert_after(const elemtype &e, int n)
         add->next = 0; 
         head = add;
     }
-
-    current = head;
-    for(int i = 1; i < n; i++)
+    else
     {
-        if(current->next == 0)  //only works if n is smaller than the number of nodes in the list
-            break;
-        current = current->next;
-    }
+        current = head;
+        for(int i = 1; i < n; i++)
+        {
+            if(current->next == 0)  //only works if n is smaller than the number of nodes in the list
+                break;
+            current = current->next;
+        }
 
-    if(current->next != 0)      //in case current was found to be the last element
-        current->next->prev = add;
-    
-    add->next = current->next;
-    add->prev = current;
-    current->next = add;
+        if(current->next != 0)      //in case current was found to be the last element
+            current->next->prev = add;
+        
+        add->next = current->next;
+        add->prev = current;
+        current->next = add;
+    }
 }
 
 bool doubleLinked::remove(const elemtype &e)

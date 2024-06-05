@@ -8,9 +8,9 @@ typedef int elemtype;
 
 class linkedList
 {
-    struct node;
+    struct node; //Strucutre Prototype
     typedef node* link;
-    struct node
+    struct node //Structure Definition
     {
         elemtype elem;
         link next;
