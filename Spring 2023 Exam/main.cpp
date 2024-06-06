@@ -2,21 +2,32 @@
 #include "q1_matrix.h"
 #include "Linked_List_Driver/linkedList.h"
 #include "Linear_List_Driver/linearList.h"
+#include "Doubled_Linked_List_Driver/doubleLinked.h"
 
 using namespace std;
 
+void displayList(linkedList L1)
+{
+    int x;
+    bool found = L1.first(x);
+    while(found)
+    {
+        cout << x << " ";
+        found = L1.next(x);
+    }
+}
+
 int main()
 {
-    MATRIX A(3, 4);
-    
-    for(int i = 0; i < 3; i ++)
-        for(int j = 0; j < 4; j++)
-            A.insert(i + j, i, j);
+    linkedList L1;
 
-    A.display();
+    for(int i = 0; i < 10; i++)
+        L1.insert(i * 5);
 
-    //Question 2
-    linearList L1, L2, C;
-    C = L1.equal(L2);
-    
+    displayList(L1);
+    cout << endl;
+
+    L1.remove_bunch(4, 3);
+    displayList(L1);
+    cout << endl;
 }
