@@ -135,8 +135,8 @@ bool doubleLinked::remove(const elemtype &e)
     if(head->elem == e)
     {
         temp = head;
-        head->next->prev = 0;
         head = head->next;
+        head->prev = 0;
         delete temp;
         return true;
     }
@@ -144,15 +144,16 @@ bool doubleLinked::remove(const elemtype &e)
     current = head;
     while((current->next->elem != e) && (current->next))
         current = current->next;
+
     if(current->next == 0)
         return false;
 
     temp = current->next;
     current->next = temp->next;
-    if(current->next)   //checks if the current is the last node in the list
+    if(current->next != 0)   //checks if the current is the last node in the list
         current->next->prev = current;
     delete temp;
-    return true;  
+    return true;
 }
 
 void doubleLinked::insert_before(const elemtype &e, int n)
