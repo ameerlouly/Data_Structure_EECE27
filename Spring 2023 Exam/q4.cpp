@@ -17,7 +17,7 @@ void doubleLinked::insert_ascend(const elemtype &e)
     insert_after(e, i);
 }
 
-/* TEST LATER
+/* ANOTHER SOLUTIO NOT COMPLETE YET
 link add = new node;
 assert(add);
 add->elem = e;
