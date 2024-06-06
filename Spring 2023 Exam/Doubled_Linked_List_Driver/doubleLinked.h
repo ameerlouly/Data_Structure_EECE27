@@ -23,6 +23,7 @@ class doubleLinked
     void insert_end(const elemtype &e);
     void insert_after(const elemtype &e, int);
     bool remove(const elemtype &e);
+    void insert_ascend(const elemtype &e);
 };
 
 #endif // DOUBLELINKED_H_INCLUDED

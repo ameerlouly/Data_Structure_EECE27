@@ -134,3 +134,4 @@ bool linkedList::remove(const elemtype &e)
     delete p;
     return true;
 }
+

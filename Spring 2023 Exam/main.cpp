@@ -1,28 +1,9 @@
 #include <iostream>
-#include "matrix.h"
+#include "q1_matrix.h"
 #include "Linked_List_Driver/linkedList.h"
+#include "Linear_List_Driver/linearList.h"
 
 using namespace std;
-
-//Question 2
-void linkedList::equal(linkedList A, linkedList B)
-{
-    elemtype elemA, elemB;
-    bool foundA = A.first(elemA);
-    bool foundB = B.first(elemB);
-
-    while(foundA && foundB)
-    {
-        if(elemA == elemB)
-            insert(elemA);
-        else
-            insert(0);
-
-        A.next(elemA);
-        B.next(elemB);
-    }
-
-}
 
 int main()
 {
@@ -33,4 +14,9 @@ int main()
             A.insert(i + j, i, j);
 
     A.display();
+
+    //Question 2
+    linearList L1, L2, C;
+    C = L1.equal(L2);
+    
 }
