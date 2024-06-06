@@ -1,6 +1,8 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+//Question 1
+
 class MATRIX
 {
     int r, c;

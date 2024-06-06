@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//Question 1
+
 MATRIX::MATRIX(int a, int b)    //Constructor
     {
         r = a;
@@ -73,7 +75,7 @@ MATRIX MATRIX::multiply(MATRIX b)
         for(int j = 0; j < b.c; j++)
         {
             for(int x = 0; x < c; x++)
-                C.data[i][j] += data[i][x] * b.data[j][x];
+                C.data[i][j] += data[i][x] * b.data[x][j];
         }
     }
     return C;
