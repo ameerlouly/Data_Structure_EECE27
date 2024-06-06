@@ -1,5 +1,8 @@
 #include "doubleLinked.h"
+#include <iostream>
 #include <assert.h>
+
+using namespace std;
 
 doubleLinked::doubleLinked() //constructor intializes the List
 {
@@ -98,6 +101,22 @@ void doubleLinked::insert_after(const elemtype &e, int n)
     }
 }
 
+int doubleLinked::search(const elemtype &e)
+{
+    int n = 1;
+    if(head->elem == e)
+        return n;
+    current = head;
+    while(current->next)
+    {
+        current = current->next;
+        n++;
+        if(current->elem == e)
+            return n;
+    }
+    return -1;
+}
+
 bool doubleLinked::remove(const elemtype &e)
 {
     link temp;
@@ -111,7 +130,8 @@ bool doubleLinked::remove(const elemtype &e)
         return true;
     }
 
-    while(current->next && current->next->elem != e)
+    current = head;
+    while((current->next->elem != e) && (current->next))
         current = current->next;
     if(current->next == 0)
         return false;
@@ -155,7 +175,7 @@ void doubleLinked::insert_before(const elemtype &e, int n)
     }
 }
 
-bool doubleLinked::remove_index(const elemtype &e, int n)
+bool doubleLinked::remove_index(int n)
 {
     link temp;
 
@@ -175,4 +195,16 @@ bool doubleLinked::remove_index(const elemtype &e, int n)
         temp->next->prev = current;
     delete temp;
     return true;
+}
+
+void doubleLinked::display()
+{
+    current = head;
+    cout << head->elem << " ";
+    while(current->next)
+    {
+        current = current->next;
+        cout << current->elem << " ";
+    }
+    cout << endl;
 }

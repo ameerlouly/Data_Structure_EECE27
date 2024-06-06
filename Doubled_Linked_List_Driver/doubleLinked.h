@@ -24,7 +24,9 @@ class doubleLinked
     void insert_after(const elemtype &e, int);
     void insert_before(const elemtype &e, int);
     bool remove(const elemtype &e);
-    bool remove_index(const elemtype &e, int);
+    bool remove_index(int);
+    void display();
+    int search(const elemtype &e);
 };
 
 #endif // DOUBLELINKED_H_INCLUDED
