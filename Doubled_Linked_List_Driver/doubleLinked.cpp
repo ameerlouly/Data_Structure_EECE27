@@ -110,5 +110,47 @@ bool doubleLinked::remove(const elemtype &e)
         delete temp;
         return true;
     }
-    
+
+    while(current->next && current->next->elem != e)
+        current = current->next;
+    if(current->next == 0)
+        return false;
+
+    temp = current->next;
+    current->next = temp->next;
+    if(current->next)   //checks if the current is the last node in the list
+        current->next->prev = current;
+    delete temp;
+    return true;  
+}
+
+void doubleLinked::insert_before(const elemtype &e, int n)
+{
+    link add = new node;
+    assert(add);
+    add->elem = e;
+
+    if(head == 0)
+    {
+        add->next = 0;
+        add->prev = 0;
+        head = add;
+    }
+    else
+    {
+        current = head;
+        for(int i = 1; i < n; i++)
+        {
+            if(current->next == 0)
+                break;
+            current = current->next;
+        }
+
+        add->prev = current->prev;
+        if(current->prev) //checks if current is the first node
+            current->prev->next = add;
+
+        add->next = current;
+        current->prev = add;
+    }
 }

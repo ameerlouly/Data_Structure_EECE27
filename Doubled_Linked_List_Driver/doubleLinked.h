@@ -22,6 +22,7 @@ class doubleLinked
     bool next(elemtype &e);
     void insert_end(const elemtype &e);
     void insert_after(const elemtype &e, int);
+    void insert_before(const elemtype &e, int);
     bool remove(const elemtype &e);
 };
 
