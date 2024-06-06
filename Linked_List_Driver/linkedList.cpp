@@ -11,6 +11,17 @@ linkedList::linkedList()
     current = 0;
 }
 
+linkedList::~linkedList()
+{
+    current = head;
+    while(head)
+    {
+        current = head;
+        head = head->next;
+        delete current;
+    }
+}
+
 void linkedList::insert(const elemtype &e)
 {
     link addnode(new node); //Dynamic memory allocation of a node
@@ -81,6 +92,20 @@ int linkedList::search(const elemtype &e)
     return -1;
 }
 
+linkedList::link linkedList::search_link(const elemtype &e)
+        {
+            elemtype x;
+            int n = 0;
+
+            current = head;
+            while(current->elem != e && current->next)
+                current = current->next;
+            if(current->elem == e)
+                return current;
+
+            return 0;
+        }
+
 int search_list(linkedList l1, elemtype &e)
 {
     elemtype x;
@@ -133,4 +158,51 @@ bool linkedList::remove(const elemtype &e)
     current->next = p->next;
     delete p;
     return true;
+}
+
+void linkedList::insert_before(const elemtype &e, int n)
+{
+    link add = new node;
+    assert(add);
+    add->elem = e;
+
+    if(head == 0)
+    {
+        add->next = 0;
+        head = add;
+        return;
+    }
+
+    if(n == 1)
+    {
+        add->next = head;
+        head = add;
+        return;
+    }
+
+    link prev = head;
+    current = head->next;
+    for(int i = 2; i < n; i++)
+    {
+        if(current->next == 0)  //only works if n < size of array
+            break;
+        prev = current;
+        current = current->next;
+    }
+
+    prev->next = add;
+    add->next = current;
+    
+}
+
+void linkedList::display()
+{
+    current = head;
+    cout << head->elem << " ";
+    while(current->next)
+    {
+        current = current->next;
+        cout << current->elem << " ";
+    }
+    cout << endl;
 }

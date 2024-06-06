@@ -20,26 +20,17 @@ class linkedList
 
     public:
         linkedList();
+        ~linkedList();
         void insert(const elemtype &e);
         bool first(elemtype &e);
         bool next(elemtype &e);
         void print_list();
         int search(const elemtype &e);
-        link search_link(const elemtype &e)
-        {
-            elemtype x;
-            int n = 0;
-
-            current = head;
-            while(current->elem != e && current->next)
-                current = current->next;
-            if(current->elem == e)
-                return current;
-
-            return 0;
-        }
+        link search_link(const elemtype &e);
         int count_node();
         bool remove(const elemtype &e);
+        void insert_before(const elemtype &e, int);
+        void display();
 };
 
 int search_list(linkedList, elemtype &e);

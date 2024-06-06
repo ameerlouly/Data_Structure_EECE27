@@ -9,6 +9,17 @@ doubleLinked::doubleLinked() //constructor intializes the List
     head = 0; current = 0;
 }
 
+doubleLinked::~doubleLinked()
+{
+    current = head;
+    while(head)
+    {
+        current = head;
+        head = head->next;
+        delete current;
+    }
+}
+
 void doubleLinked::insert(const elemtype &e)    //Insert at the beginning of the list
 {
     link addnode(new node);
