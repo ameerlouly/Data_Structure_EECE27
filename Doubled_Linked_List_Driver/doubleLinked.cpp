@@ -154,3 +154,25 @@ void doubleLinked::insert_before(const elemtype &e, int n)
         current->prev = add;
     }
 }
+
+bool doubleLinked::remove_index(const elemtype &e, int n)
+{
+    link temp;
+
+    if(head == 0)
+     return false;
+
+    current = head;
+    for(int i = 1; i < n - 1; i++)
+        {
+            if(current->next == 0)
+                return false;
+            current = current->next;
+        }
+    temp = current->next;
+    current->next = temp->next;
+    if(temp->next != 0)
+        temp->next->prev = current;
+    delete temp;
+    return true;
+}
