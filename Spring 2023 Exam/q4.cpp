@@ -14,7 +14,7 @@ void doubleLinked::insert_ascend(const elemtype &e)
         return;
     }
 
-    while(current->next && e > current->elem)
+    while(current->next && e > current->next->elem)
         current = current->next;
     
     link add = new node;
