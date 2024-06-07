@@ -1,27 +1,23 @@
 /*NOT COMPLETE SOLUTION YET*/
 
-// #include <iostream>
-// #include <string.h>
+#include <iostream>
+#include <string.h>
 
-// using namespace std;
+using namespace std;
 
-// bool isSym(string s)
-// {
-//     int n = s.size();
-//     cout << n << endl;
-//     string s1 = s.substr(0, n/2);
-//     cout << s1 << endl;
-//     string s2 = s.substr(n - 1, n/2 + 1);
-//     cout << s2 << endl;
+bool isSym(char s[])
+{
+    int n = strlen(s);
+    for(int i = 0; i <= n/2; i++)
+    {
+        if(s[i] != s[n - i - 1])
+            return false;
+    }
+    return true;
+}
 
-//     if(s1 == s2)
-//         return true;
-//     else
-//         return false;
-// }
-
-// int main()
-// {
-//     string s = "abcdcba";
-//     cout << isSym(s);
-// }
+int main()
+{
+    char s[] = "abcdcba";
+    cout << isSym(s);
+}
