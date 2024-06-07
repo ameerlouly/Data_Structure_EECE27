@@ -41,6 +41,7 @@ class linkedList
         int count_node();
         bool remove(const elemtype &e);
         bool remove_bunch(int n, int m);
+        bool remove_bunch2(int n, int m);
 };
 
 int search_list(linkedList, elemtype &e);

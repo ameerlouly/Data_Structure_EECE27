@@ -13,13 +13,16 @@ bool linkedList::remove_bunch(int n, int m)
     }
     p = current; //P points to the node before the node i want to start deleting from
       
-    for(int i = 1; i <= m; i++)
+    for(int i = 0; i < m; i++)
     {
         if(current->next == 0)  //Checks if i reached the end of the list, and returns false if true
             return false;     
         current = current->next;
     }
     s = current; //s points to the last node i want to delete
+
+    if(s->next == 0)    //if s was found at the end of the list, change tail
+        tail = p;
 
     current = p;  
     p = p->next; // moves p to the first node i want to delete
