@@ -8,7 +8,6 @@ using namespace std;
 void doubleLinked::insert_ascend(const elemtype &e)
 {
     current = head;
-    cout << e << endl;
     if(head->elem >= e)
     { 
         insert(e);
