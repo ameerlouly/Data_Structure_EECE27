@@ -14,14 +14,18 @@ void doubleLinked::insert_ascend(const elemtype &e)
         return;
     }
 
-    int i = 0;
     while(current && e > current->elem)
-    {
         current = current->next;
-        i++;
-    }
+    
+    link add = new node;
+    assert(add);
+    add->elem = e;
 
-    insert_after(e, i);
+    add->next = current->next;
+    if(current->next)
+        current->next->prev = add;
+    current->next = add;
+    add->prev = current;
 }
 
 /* ANOTHER SOLUTIO NOT COMPLETE YET
