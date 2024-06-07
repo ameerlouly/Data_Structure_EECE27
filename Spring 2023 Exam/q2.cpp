@@ -1,5 +1,9 @@
 #include "Linear_List_Driver/linearList.h"
 
+//WRONG ANSWER
+//PLEASE CHECK THE ANSWER ON THE GOOGLE DRIVE
+//UNTILL THIS IS EDITED
+
 //Question 2
 linearList linearList::equal(linearList B)
 {
