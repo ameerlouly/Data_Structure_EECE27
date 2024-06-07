@@ -20,6 +20,16 @@ doubleLinked::~doubleLinked()
     }
 }
 
+bool doubleLinked::first(elemtype &e)
+{
+    assert(current);
+    if(head == 0)
+        return false;
+    current = head;
+    e = head->elem;
+    return true;
+}
+
 void doubleLinked::insert(const elemtype &e)    //Insert at the beginning of the list
 {
     link addnode(new node);
@@ -87,6 +97,8 @@ void doubleLinked::insert_after(const elemtype &e, int n)
 {
     link add = new node;
     assert(add);
+    add->elem = e;
+
     if(head == 0)
     {
         add->prev = 0;

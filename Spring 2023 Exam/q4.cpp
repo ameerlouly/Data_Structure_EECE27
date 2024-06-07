@@ -1,14 +1,22 @@
 #include "Doubled_Linked_List_Driver/doubleLinked.h"
 #include <assert.h>
+#include <iostream>
+
+using namespace std;
 
 //Question 4
 void doubleLinked::insert_ascend(const elemtype &e)
 {
     current = head;
+    cout << e << endl;
     if(head->elem >= e)
+    { 
         insert(e);
-    int i = 1;
-    while(e > current->elem && current->next)
+        return;
+    }
+
+    int i = 0;
+    while(current && e > current->elem)
     {
         current = current->next;
         i++;

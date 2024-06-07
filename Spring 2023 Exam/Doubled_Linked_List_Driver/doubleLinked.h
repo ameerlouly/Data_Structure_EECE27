@@ -18,6 +18,7 @@ class doubleLinked
     public:
     doubleLinked();
     void insert(const elemtype &e);
+    bool first(elemtype &e);
     bool prev(elemtype &e);
     bool next(elemtype &e);
     void insert_end(const elemtype &e);
