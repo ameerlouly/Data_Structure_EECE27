@@ -206,6 +206,14 @@ bool doubleLinked::remove_index(int n)
     if(head == 0)
      return false;
 
+    if(n == 1)
+    {
+        temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
     current = head;
     for(int i = 1; i < n - 1; i++)
         {

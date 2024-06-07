@@ -206,3 +206,34 @@ void linkedList::display()
     }
     cout << endl;
 }
+
+bool linkedList::remove_index(int n)
+{
+    link temp;
+
+    if(head == 0)
+        return false;
+
+    if(n == 1)
+    {
+        temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
+    current = head;
+    for(int i = 1; i < n - 1; i++) //assuming index starts from 1
+    {
+        if(current->next == 0)
+            return false;
+        current = current->next;
+    }
+
+    temp = current->next;
+    current->next = temp->next;
+    if(current->next == 0)
+        tail = current;
+    delete temp;
+    return true;
+}

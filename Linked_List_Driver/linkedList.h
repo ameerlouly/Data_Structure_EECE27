@@ -29,6 +29,7 @@ class linkedList
         link search_link(const elemtype &e);
         int count_node();
         bool remove(const elemtype &e);
+        bool remove_index(int n);
         void insert_before(const elemtype &e, int);
         void display();
 };
